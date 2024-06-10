@@ -22,7 +22,9 @@
   height: 395px;
   width: 380px;
 }
-.register-container {
+
+.register-container,
+.course-form {
   background-color: rgba(192, 192, 192, 0.7);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -33,6 +35,7 @@
 
 .login-container h2,
 .student-form h2,
+.course-form h2,
 .register-container h2 {
   margin-bottom: 20px;
   text-align: center;
@@ -40,12 +43,14 @@
 
 .login-container .form-group,
 .student-form .form-group,
+.course-form .form-group,
 .register-container .form-group {
   margin-bottom: 15px;
 }
 
 .login-container .form-group label,
 .student-form .form-group label,
+.course-form .form-group label,
 .register-container .form-group label {
   display: block;
   font-size: 14px;
@@ -56,6 +61,7 @@
 .login-container .form-group input,
 .login-container .form-group select,
 .student-form .form-group input,
+.course-form .form-group input,
 .register-container .form-group input {
   width: 100%;
   padding: 8px;
@@ -65,6 +71,7 @@
 
 .login-container .btn-login,
 .student-form button,
+.course-form button,
 .register-container .btn-signup {
   background-color: #4caf50;
   color: #fff;

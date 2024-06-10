@@ -2,31 +2,26 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CourseCard from "./CourseCard";
 import "../css/Course.css";
+import SearchCourse from "./SearchCourse";
 
 const Courses = ({ role }) => {
   const [courses, setCourses] = useState([]);
+
   useEffect(() => {
     axios
       .get("http://localhost:3001/course/courses")
       .then((res) => {
-        setCourses(res.data);
-        console.log(res.data);
+        console.log("Datos recibidos:", res.data); // Verificar los datos recibidos
+        // Si los datos son un array de cursos, filtra por 'name'
+        const validCourses = res.data.filter((course) => course && course.name);
+        setCourses(validCourses);
+        console.log("Cursos válidos:", validCourses);
       })
       .catch((err) => console.log(err));
   }, []);
   return (
     <div className="course-back">
-      <div className="course-list">
-        {courses.map((course) => {
-          return (
-            <CourseCard
-              key={course._id}
-              course={course}
-              role={role}
-            ></CourseCard>
-          );
-        })}
-      </div>
+      <SearchCourse courses={courses} role={role} />
     </div>
   );
 };

@@ -5,6 +5,30 @@
   margin-top: 50px;
 }
 
+/* Estilos para el contenedor del buscador */
+.search-container {
+  margin: 15px;
+  text-align: center;
+  background-color: #f0f0f0; /* Color de fondo del buscador */
+  padding: 10px; /* Añade espacio alrededor del buscador */
+}
+
+/* Estilo para la entrada del buscador */
+.search-input {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Estilos para el mensaje de no resultados */
+.no-results {
+  color: #999;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
 /* CourseCard.css */
 
 .course-card {

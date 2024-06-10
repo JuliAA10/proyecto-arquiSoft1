@@ -7,7 +7,7 @@ const DeleteCourse = () => {
   const { id } = useParams();
   useEffect(() => {
     axios
-      .delete("http://localhost:3001/book/book/" + id)
+      .delete("http://localhost:3001/course/course/" + id)
       .then((res) => {
         if (res.data.deleted) {
           navigate("/courses");
