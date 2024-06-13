@@ -4,9 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const AddStudent = () => {
-  const [roll, setRoll] = useState("");
   const [username, setUsername] = useState("");
-  const [grade, setGrade] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
@@ -14,9 +12,7 @@ const AddStudent = () => {
     e.preventDefault();
     axios
       .post("http://localhost:3001/student/register", {
-        roll,
         username,
-        grade,
         password,
       })
       .then((res) => {
@@ -32,30 +28,12 @@ const AddStudent = () => {
       <form className="student-form" onSubmit={handleSubmit}>
         <h2>Add Student</h2>
         <div className="form-group">
-          <label htmlFor="roll">Roll Nro:</label>
-          <input
-            type="text"
-            id="roll"
-            name="roll"
-            onChange={(e) => setRoll(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
           <label htmlFor="username">User Name:</label>
           <input
             type="text"
             id="username"
             name="username"
             onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="grade">Grade:</label>
-          <input
-            type="text"
-            id="grade"
-            name="grade"
-            onChange={(e) => setGrade(e.target.value)}
           />
         </div>
         <div className="form-group">

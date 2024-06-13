@@ -15,7 +15,6 @@ const Courses = ({ role }) => {
         // Si los datos son un array de cursos, filtra por 'name'
         const validCourses = res.data.filter((course) => course && course.name);
         setCourses(validCourses);
-        console.log("Cursos válidos:", validCourses);
       })
       .catch((err) => console.log(err));
   }, []);

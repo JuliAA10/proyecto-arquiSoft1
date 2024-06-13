@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 export const Registration = () => {
   const [name, setName] = useState();
   const [lastname, setLastname] = useState();
+  const [username, setUsername] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate();
@@ -14,9 +15,10 @@ export const Registration = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/register", {
+      .post("http://localhost:3001/auth/register", {
         name,
         lastname,
+        username,
         email,
         password,
       })
@@ -45,6 +47,14 @@ export const Registration = () => {
             type="lastname"
             placeholder="Enter Last Name"
             onChange={(e) => setLastname(e.target.value)}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="uname">Username:</label>
+          <input
+            type="username"
+            placeholder="Enter Username"
+            onChange={(e) => setUsername(e.target.value)}
           />
         </div>
         <div className="form-group">

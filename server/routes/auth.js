@@ -47,7 +47,7 @@ router.post("/login", async (req, res) => {
 
 router.post("/register", async (req, res) => {
   try {
-    const { name, lastname, email, password } = req.body;
+    const { name, lastname, username, email, password } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
     const existingStudent = await Student.findOne({ username });
     if (existingStudent) {

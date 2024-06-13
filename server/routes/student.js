@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post("/register", verifyAdmin, async (req, res) => {
   try {
-    const { roll, username, grade, password } = req.body;
+    const { username, password } = req.body;
     const student = await Student.findOne({ username });
     if (student) {
       return res.json({ message: "student is registered" });
@@ -15,8 +15,6 @@ router.post("/register", verifyAdmin, async (req, res) => {
     const newstudent = new Student({
       username,
       password: hashPassword,
-      roll: roll,
-      grade,
     });
     await newstudent.save();
     return res.json({ registered: true });
